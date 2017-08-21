@@ -1,0 +1,32 @@
+{
+  "name": "抢票软件",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "选定好城市和想看的剧目，使用该插件在大麦网上抢票",
+  "icon": {
+    "48": "img/48.png",
+    "19": "img/19.png"
+  },
+  "background": {
+    "scripts": [
+      "js/jquery_1.8.2.js",
+      "js/main.js"
+    ]
+  },
+  "permission": [
+    "*://*/*",
+    "storage",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_title": "抢票软件",
+    "default_icon": "img/19.png",
+    "default_popup": "files/popup.html"
+  },
+  //能访问并修改浏览器当前页面的脚本，不能修改当前扩展的DOM，但与当前扩展交换信息
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "css": [],
+    "js": ["js/jquery_1.8.2.js"]
+  }]
+}
